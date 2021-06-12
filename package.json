@@ -1,0 +1,23 @@
+{
+  "name": "terraform-serverless",
+  "version": "1.0.0",
+  "description": "test of serverless jamstack",
+  "main": "none",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "bash build-funcs.sh $npm_package_version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChristopherDurand/terraform-serverless.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChristopherDurand/terraform-serverless/issues"
+  },
+  "homepage": "https://github.com/ChristopherDurand/terraform-serverless#readme"
+}

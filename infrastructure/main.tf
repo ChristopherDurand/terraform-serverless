@@ -4,6 +4,10 @@ terraform {
       source = "hashicorp/aws"
     }
   }
+  backend "s3" {
+    key    = "state"
+    region = "us-east-1"
+  }
 }
 
 provider "aws" {
@@ -12,15 +16,15 @@ provider "aws" {
 
 resource "aws_lambda_function" "backend" {
   for_each      = var.lambdas
+
   function_name = each.key
-  s3_bucket     = var.s3_bucket
-  s3_key        = "${var.ver}/${each.key}.zip"
+  filename = "${path.root}/.funcs/${each.key}.zip"
+
   memory_size   = each.value.memory_size
   handler       = each.value.handler
   runtime       = each.value.runtime
   role          = aws_iam_role.lambda_exec.arn
 }
-
 
 resource "aws_apigatewayv2_api" "backend" {
   name                         = "ServerlessBackend"
@@ -48,7 +52,7 @@ resource "aws_apigatewayv2_route" "backend" {
 
 resource "aws_apigatewayv2_stage" "backend" {
   api_id = aws_apigatewayv2_api.backend.id
-  name   = "backend-stage"
+  name   = "production"
   auto_deploy = true
 }
 
@@ -66,6 +70,8 @@ resource "aws_apigatewayv2_deployment" "backend" {
     create_before_destroy = true
   }
 }
+
+
 resource "aws_lambda_permission" "allow_apigw" {
   for_each      = aws_lambda_function.backend
   statement_id  = "AllowApiGatewayExecuteLambdas"

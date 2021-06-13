@@ -7,6 +7,5 @@ variable "lambdas" {
     route_key = string
   }))
 }
-variable "ver" {}
-
-
+variable "domain" {}
+variable "mime_types" {}

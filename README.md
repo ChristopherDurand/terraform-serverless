@@ -12,6 +12,7 @@ This requires that you have a domain whose DNS is controlled by R53.
     - runtime -- Runtime for the lambda. Check AWS Lambda Documentation
     - memory_size -- Amount, in megabytes, of memory the lambda gets.
     - route_key -- `"GET /api/pets"` means the lambda is invoked on a `GET` request to `/api/pets`.
+    - There is an example commented out to help with this
   - Come up with a unique bucket name, and set that as the `s3_bucket` var.
   - Put the domain name you have in the `domain` variable.
 4. One you have your lambdas a

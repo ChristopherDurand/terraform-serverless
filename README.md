@@ -17,6 +17,7 @@ This requires that you have a domain whose DNS is controlled by R53.
     - runtime -- Runtime for the lambda. Check AWS Lambda Documentation
     - memory_size -- Amount, in megabytes, of memory the lambda gets.
     - route_key -- `"GET /api/pets"` means the lambda is invoked on a `GET` request to `/api/pets`.
+    - There is an example commented out to help with this
   - Come up with a unique bucket name, **different from your state store**, and set that as the `s3_bucket` var.
   - Put the domain name you have in the `domain` variable.
 5. Once you are ready to deploy:
@@ -51,4 +52,7 @@ TODO:
     - The mime-types were a problem here. It would probably be far better to make an NPM script that does something like `bash ./deploy-to-s3.sh && cd infrastructure && terraform deploy`, where `deploy-to-s3.sh` does something like `aws s3 rsync ... ...` It works for now, though. I'm sure there's a mime type not covered in that list, though.
   - Play around with DynamoDB or Aurora Serverless as a serverless DB for the lambdas
   - Implement something other than hello world using this
+<<<<<<< HEAD
   - Figure out how to test lambdas locally -- no way to test the app locally right now
+=======
+>>>>>>> a0fd0148ddabbb8f15f15ba14eb833aee5cf4e0d

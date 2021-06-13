@@ -1,19 +1,19 @@
-lambdas = {
-  main = {
-    memory_size = 128
-    runtime = "nodejs14.x"
-    handler = "main.handler"
-    route_key = "GET /api/pets"
-  }
-  secondary = {
-    memory_size = 256
-    runtime = "nodejs14.x"
-    handler = "secondary.handler"
-    route_key = "GET /api/foods"
-  }
-}
-s3_bucket = "terraform-serverless-example-13437"
-domain = "chrisdurand.net"
+# lambdas = {
+#   main = {
+#     memory_size = 128
+#     runtime = "nodejs14.x"
+#     handler = "main.handler"
+#     route_key = "GET /api/pets"
+#   }
+#   secondary = {
+#     memory_size = 256
+#     runtime = "nodejs14.x"
+#     handler = "secondary.handler"
+#     route_key = "GET /api/foods"
+#   }
+# }
+s3_bucket = "unique-bucket-name"
+domain = "example.com"
 mime_types = {
   ".txt"    = "text/plain; charset=utf-8"
   ".html"   = "text/html; charset=utf-8"

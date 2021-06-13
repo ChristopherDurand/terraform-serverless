@@ -53,7 +53,4 @@ TODO:
     - The mime-types were a problem here. It would probably be far better to make an NPM script that does something like `bash ./deploy-to-s3.sh && cd infrastructure && terraform deploy`, where `deploy-to-s3.sh` does something like `aws s3 rsync ... ...` It works for now, though. I'm sure there's a mime type not covered in that list, though.
   - Play around with DynamoDB or Aurora Serverless as a serverless DB for the lambdas
   - Implement something other than hello world using this
-<<<<<<< HEAD
   - Figure out how to test lambdas locally -- no way to test the app locally right now
-=======
->>>>>>> a0fd0148ddabbb8f15f15ba14eb833aee5cf4e0d

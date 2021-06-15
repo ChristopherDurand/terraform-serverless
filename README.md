@@ -49,8 +49,8 @@ These are the resources that are created --
 
 TODO:
   - Verify functionality for other lambda runtimes
-  - Find a better way to deploy the static assets to S3 origin
-    - The mime-types were a problem here. It would probably be far better to make an NPM script that does something like `bash ./deploy-to-s3.sh && cd infrastructure && terraform deploy`, where `deploy-to-s3.sh` does something like `aws s3 rsync ... ...` It works for now, though. I'm sure there's a mime type not covered in that list, though.
+  - Split off Build & Deploy
+    - Zipping lambdas and uploading static assets should be separate from deployment via Terraform
   - Play around with DynamoDB or Aurora Serverless as a serverless DB for the lambdas
   - Implement something other than hello world using this
   - Figure out how to test lambdas locally -- no way to test the app locally right now
